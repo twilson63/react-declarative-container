@@ -27,10 +27,10 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
-  "author": "",
+  "author": "Tom Wilson <tom@jackhq.com>",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": "git@github.com:twilson63/react-declarative-container.git",
   "keywords": [
     "react-component"
   ]
