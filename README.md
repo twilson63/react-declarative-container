@@ -20,6 +20,10 @@ or
 yarn add react-declarative-container
 ```
 
+## Demo
+
+https://codesandbox.io/s/k5my90762o
+
 ## Example
 
 ```js
