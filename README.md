@@ -8,6 +8,20 @@ Use the Declarative Container to manage component state without having to deal
 with `this` or `bind` or `setState`. Use a declarative Container and the renderProp
 to setup your state for your component.
 
+## Install
+
+```
+npm install react-declarative-container
+```
+
+or
+
+```
+yarn add react-declarative-container
+```
+
+## Example
+
 ```js
 import Container from 'react-declarative-container'
 
@@ -51,6 +65,10 @@ they can be more declarative and easier to test. This prop is a function that pr
 ### children or render
 
 This is a function that takes an argument of props, that is all of the properties that are in state as well as all the action nodes and finally a dispatch function.
+
+## License
+
+MIT
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
