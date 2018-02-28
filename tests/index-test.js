@@ -1,10 +1,10 @@
 import expect from 'expect'
 import React from 'react'
-import {render, unmountComponentAtNode} from 'react-dom'
+import { render, unmountComponentAtNode } from 'react-dom'
 
-import Component from 'src/'
+import Container from 'src/index.js'
 
-describe('Component', () => {
+describe('Container', () => {
   let node
 
   beforeEach(() => {
@@ -16,8 +16,30 @@ describe('Component', () => {
   })
 
   it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
-    })
+    render(
+      <Container
+        initialState={{ title: 'Welcome to React components' }}
+        //didMount={dispatch => dispatch({ type: 'title', payload: 'Foobar' })}
+        render={({ title }) => <div>{title}</div>}
+      />,
+      node,
+      () => {
+        expect(node.innerHTML).toContain('Welcome to React components')
+      }
+    )
+  })
+
+  it('throws error on empty action', () => {
+    render(
+      <Container
+        initialState={{ title: 'Welcome to React components' }}
+        //didMount={dispatch => dispatch({})}
+        render={({ title }) => <div>{title}</div>}
+      />,
+      node,
+      () => {
+        expect(node.innerHTML).toContain('Welcome to React components')
+      }
+    )
   })
 })

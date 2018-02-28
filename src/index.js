@@ -40,13 +40,20 @@ class Container extends React.Component {
 
   componentDidMount() {
     if (this.props.didMount) {
-      this.props.didMount(action => {
-        this.setState({ [action.type]: action.payload })
-      })
+      this.props.didMount(this.dispatch.bind(this))
     }
   }
 
-  dispatch(action) {
+  dispatch({ type, payload }) {
+    if (!type) {
+      throw new Error('action.type must be defined!')
+    }
+    if (!payload) {
+      throw new Error('action.payload must be defined!')
+    }
+    if (typeof type !== 'string') {
+      throw new Error('action.type must be a string!')
+    }
     this.setState({ [action.type]: action.payload })
   }
 
