@@ -54,7 +54,7 @@ class Container extends React.Component {
     if (typeof type !== 'string') {
       throw new Error('action.type must be a string!')
     }
-    this.setState({ [action.type]: action.payload })
+    this.setState({ [type]: payload })
   }
 
   render() {
