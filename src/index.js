@@ -48,7 +48,7 @@ class Container extends React.Component {
     if (!type) {
       throw new Error('action.type must be defined!')
     }
-    if (!payload) {
+    if (payload === undefined) {
       throw new Error('action.payload must be defined!')
     }
     if (typeof type !== 'string') {
