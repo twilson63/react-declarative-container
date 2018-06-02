@@ -64,7 +64,7 @@ class Container extends React.Component {
     const actions = Object.assign(
       { dispatch: this.dispatch.bind(this) },
       typeof this.props.actions === 'function'
-        ? this.props.actions(this.dispatch.bind(this))
+        ? this.props.actions(this.dispatch.bind(this), this.state)
         : {}
     )
 
